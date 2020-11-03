@@ -1,7 +1,7 @@
 # Flop-Evaluator
 Site: <a href = "https://www.flopevaluate.com/"> https://www.flopevaluate.com/ </a>
 <br>
-This is a website containing two FREE poker tools to improve your flop game. I designed, coded, and launched this website in the summer of 2020 (Currently being hosted on Heroku).
+This is a website containing two FREE poker tools to improve your flop game. I designed, coded, and launched this website in the summer of 2020 (currently being hosted on Heroku).
 
 # Range Breakdown
 The first tool analyzes the flop using two optimal preflop ranges and returns the connectivity of the flop to each range, answering questions such as who has the range advantage, nut advantage, and so on. This tool can be used to determine how aggressive you can act on the flop, and more advanced users can use this data to punish mistakes such as over-cbetting or overfolding, two common tendencies in the low-mid stakes.
