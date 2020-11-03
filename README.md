@@ -1,5 +1,5 @@
 # Flop-Evaluator
-Page: <a href = "https://www.flopevaluate.com/"> https://www.flopevaluate.com/ </a>
+Site: <a href = "https://www.flopevaluate.com/"> https://www.flopevaluate.com/ </a>
 <br>
 This is a website containing two FREE poker tools to improve your flop game. 
 
