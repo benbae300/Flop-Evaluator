@@ -1,0 +1,63 @@
+#b-jumbo{
+    padding-bottom: 2%;
+    margin-bottom: 0rem;
+  }
+  #nav{
+    width: 100%;
+    height: 6.5vh; 
+    background-color: #343a40;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  p{
+  
+  }
+  
+  .bottom{
+  }
+  .b_button, .b_button:hover{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  background-color: #343a40;
+  color: white; 
+  border: none;
+  }
+  
+  /* Style the button that is used to open and close the collapsible content */
+  .collapsible {
+    background-color: #C0C0C0;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid #e9ecef;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+  
+  }
+  
+  .final {
+    background-color: #C0C0C0;
+    color: #444;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid #e9ecef;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  
+  }
+  

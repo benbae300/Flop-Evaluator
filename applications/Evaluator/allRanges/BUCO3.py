@@ -1,0 +1,73 @@
+import sys
+sys.path.insert(1, '../')
+from applications.Evaluator import Range as r
+
+def BUCO3():
+    bu = r.Range()
+    co  = r.Range()
+
+    bu.addPair(7, 14)
+    bu.onePairCombo('6',0.5)
+
+    bu.oneSuitedCombo('A', '3', 0.2)
+    bu.addSuitedGivenFirstCard('A', 4, 5)
+    bu.addSuitedGivenFirstCard('A', 8, 13)
+    bu.oneSuitedCombo('A', '6', 0.5)
+    bu.oneSuitedCombo('A', '7', 0.8)
+    bu.addSuitedGivenFirstCard('K', 9, 12)
+    bu.oneSuitedCombo('K', '6', 0.3)
+    bu.addSuitedGivenFirstCard('Q', 10, 11)
+    bu.oneSuitedCombo('Q', '9', 0.4)
+    bu.addSuitedGivenFirstCard('J', 9, 10)
+    bu.addSuitedGivenFirstCard('T', 9, 9)
+    bu.oneSuitedCombo('8', '7', 0.2)
+    bu.oneSuitedCombo('7', '6', 0.2)
+    bu.oneSuitedCombo('6', '5', 0.1)
+    bu.oneSuitedCombo('5', '4', 0.3)
+
+    bu.addOffSuitGivenFirstCard('A', 11, 13)
+    bu.oneOffSuitCombo('A', 'T', 0.15)
+    bu.oneOffSuitCombo('K', 'J', 0.25)
+    bu.oneOffSuitCombo('K', 'Q', 1)
+
+    co.addPair(6,8)
+    co.onePairCombo('T', 0.4)
+    co.onePairCombo('9', 0.85)
+    co.onePairCombo('2', 0.8)
+    co.onePairCombo('3', 0.8)
+    co.onePairCombo('4', 0.8)
+    co.onePairCombo('5', 0.8)
+    co.oneSuitedCombo('A', '3', 0.4)
+    co.oneSuitedCombo('A', '4', 0.55)
+    co.oneSuitedCombo('A', '5', 0.5)
+    co.oneSuitedCombo('A', '8', 0.3)
+    co.oneSuitedCombo('A', '9', 0.7)
+    co.oneSuitedCombo('A', 'T', 0.5)
+    co.oneSuitedCombo('A', 'J', 0.8)
+    co.oneSuitedCombo('A', 'Q', 0.7)
+
+    co.oneSuitedCombo('K', '5', 0.3)
+    co.oneSuitedCombo('K', '6', 0.5)
+    co.oneSuitedCombo('K', '8', 0.2)
+    co.oneSuitedCombo('K', '9', 0.65)
+    co.oneSuitedCombo('K', 'T', 0.3)
+    co.oneSuitedCombo('K', 'Q', 0.3)
+    co.oneSuitedCombo('Q', 'T', 0.9)
+    co.oneSuitedCombo('Q', 'J', 0.6)
+    co.oneSuitedCombo('J', 'T', 0.6)
+    co.oneSuitedCombo('J', '9', 0.55)
+    co.oneSuitedCombo('T', '9', 0.7)
+    co.oneSuitedCombo('T', '8', 0.5)
+    co.oneSuitedCombo('9', '8', 0.5)
+    co.oneSuitedCombo('9', '7', 0.25)
+
+    co.oneSuitedCombo('8', '7', 0.5)
+    co.oneSuitedCombo('7', '6', 0.45)
+    co.oneSuitedCombo('6', '5', 0.2)
+    co.oneSuitedCombo('5', '4', 0.5)
+
+    co.oneOffSuitCombo('A', 'J', 0.15)
+    co.oneOffSuitCombo('A', 'Q', 0.25)
+    #co.oneOffSuitCombo('K', 'Q', 0.4)
+
+    return bu, co

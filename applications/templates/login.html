@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/assets/favico.png">
+
+    <title>Flop Evaluator - Log In</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='login.css') }}">
+  </head>
+
+  <div class = 'parent'>
+    <div id = 'nav'>
+      <a class = 'b_button'  href="titlepage" style="cursor: pointer">&#8592 Back To Title Page</a>
+    </div>
+
+    <div class = 'sign'> 
+    <h1 class="h3 mb-3 font-weight-normal">Log In Here!</h1>
+
+    <form method="POST" action="/login">
+      {{ form.csrf_token }}
+
+      <fieldset class="name">
+      {{ form.name.label }}
+      {{ form.name}}
+      {% if form.name.errors %}
+        <ul class="errors">
+          {% for error in form.name.errors %}
+            <li>{{ error }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    </fieldset>
+
+    <fieldset class="password">
+      {{ form.password.label }}
+      {{ form.password}}
+      {% if form.password.errors %}
+        <ul class="errors">
+          {% for error in form.password.errors %}
+            <li>{{ error }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+      <ul class="flash">
+        {% for message in get_flashed_messages() %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </fieldset>
+
+    {{ form.submit(class = "btn btn-primary") }}
+
+
+    </form>
+    <div class="login-signup">
+    <span>Don't have an account? <a href="signup">Sign up now.</a></span>
+    </div>
+    <p class="mt-5 mb-3 text-muted">Flop Evaluator 2020</p>
+    </div>
+
+  </div>  
+</html>

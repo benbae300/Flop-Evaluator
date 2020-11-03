@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en", style = 'background: #343a40' >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/assets/favico.png">
+
+    <title>Flop Evaluator - FAQ</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Custom styles/javascript for this template -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='faq.css') }}">
+    <script src="{{url_for('static', filename='faq.js')}}"></script>
+  </head>
+
+  <body class='w-100 h-100' id='c-body'>
+    <div id = 'nav'>
+	<a class = 'b_button'  href="home" style="cursor: pointer">&#8592 Home</a>
+    </div>
+    <div class="jumbotron", id = 'b-jumbo'>
+        <div class="container">
+          <h1 class="display-3">FAQ</h1>
+          <h6>
+          	We hope this FAQ answers any questions or doubts you may have! 
+          	If you still have questions, concerns or even just comments about the site, feel free to email us at <u>FlopEvaluate@gmail.com</u>.
+            </h6>
+
+        </div>
+      </div>
+
+      <div class = "bottom">
+      	
+      	<button type="button" class="collapsible"><u><h6>&#8853 What stakes was this tool made for?</u></h6></button>
+		<div class="content">
+		  <p> Flop Evaluator was specifically designed for online 6-max low-mid stakes with considerations to rake.</p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 Why just flop? Why not turns and rivers too? </u></h6></button>
+		<div class="content">
+		  <p> The flop is the most important post-flop spot to study, as our range and our decisions will branch out based on the decisions we make on the flop. In other words, the further we stray from good poker on the flop, the more our mistakes will compound on later streets.</p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 How do I most effectively use this tool?  </u></h6></button>
+		<div class="content">
+		  <p> That's completely up to you! If you are fairly new to poker or new to seriously studying, we'd recommend saving some tricky spots that have come up in your games, collecting them all together, and playing around with the range breakdown tool until you start noticing certain patterns. If you are a more advanced player that plays a fairly consistent strategy, you can invest time into looking up certain specific spots (i.e. K/Q high two-tone boards in 3 bet pots) and seeing if your current strategy is in-line with what the optimized ranges seem to be showing. We would also recommend spending a bit of time working on defending correctly versus range bets by looking at the equities of different hands versus an optimal range (especially in 3-bet pots). This will generate a LOT of EV for you especially if you are playing around 25-100NL, as regs tend to respond very poorly to counterstrategies against the range bet (but love to use this simplification). Overall though, if you put in time with this tool, results will show!</p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 What kind of ranges are you using to breakdown the flop? </u></h6></button>
+		<div class="content">
+		  <p>We are using solved MonkerSolver pre-flop ranges specialized for optimal 6-max 100 big blind raked poker. However, it won't be completely unrealistic, as we chose to exclude very specific strategies that most people will not ever take (e.g. 4-bet bluffing K6s UTG at a low frequency can probably just be excluded for a more accurate study). </p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 Can you post the ranges you used? </u></h6></button>
+		<div class="content">
+		  <p>No, it would not be fair to those who paid money (myself included) to obtain these ranges.</p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 I’m playing in low stakes where opponent are probably not even close to playing optimal pre-flop strategy… is this useful for me? </u></h6></button>
+		<div class="content">
+		  <p>Yes, this tool was made for you, in fact! First of all, starting to understand theoretically how ranges interact with different boards takes the guesswork out of your strategies and builds a foundation that will help you quickly identify and exploit your opponent's leaks (AKA 'reads'). Next, building an overall +EV flop strategy will guarantee you winning money and moving up in stakes without needing to level yourself against weaker regs/fish. Also, if you see an unknown player without reads, you will have a default strategy to fall back on. Finally, a decent amount of low-stakes regulars tend to blindly bet their entire range in a lot of spots, but probably have not taken the time to study proper defenses versus an aggressive check/raise. You can easily exploit this by studying our second tool to apply maximum pressure. </p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 Why are there some common pre-flop situations that aren't available to select? </u></h6></button>
+		<div class="content">
+		  <p>Like mentioned earlier, we only deal with optmized spots; for example, we won't see a lot of small blind flatting going on. For that reason, we exclude these situations from the pre-flop range selection, as players' ranges will differ widely  and there is no 'optimal' solution to ground ourselves in.</p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 Why aren’t there options to create my own ranges? </u></h6></button>
+		<div class="content">
+		  <p>It may definitely be useful, but given that there are enough tools, even free ones (albeit less powerful) to analyze range versus range scenarios, we thought including that option was redundant. Given enough interest however, we can definitely add in that functionality! </p>
+        </div>
+        
+		<button type="button" class="collapsible"><u><h6>&#8853 Why are there no cold 4-bet spots? </u></h6></button>
+		<div class="content">
+		  <p>Cold 4-bets are so narrow, so rare, so unbalanced (very top-end heavy), with a decent number of hands usually incentivized to 5-bet jam a lot anyway, that we decided to omit these very specific situations to more efficiently direct your time and studies. If there is enough demand though, we may add it in the future!</p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 Why are UTG and HJ grouped together for non-single raised pots? </u></h6></button>
+		<div class="content">
+		  <p>The ranges are so similar for these spots outside of single raised pots that we thought it'd be a more effective use of study time to group them together.</p>
+		</div>
+
+
+		<button type="button" class="collapsible"><u><h6>&#8853 Is this created for multi-way action?</u></h6></button>
+		<div class="content">
+		  <p>No, each spot is implied to be heads up.</p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 In the Range Breakdown section, what does ‘nuts’ or ‘top pair+’ entail?</u></h6></button>
+		<div class="content">
+		  <p>'Nuts' implies two-pair or better- basically the hands you are happy with getting money in on the flop. Top Pair+ implies any ONE PAIR hand that is top pair or better (overpair) that do NOT include the nuts. </p>
+		</div>
+
+		<button type="button" class="collapsible"><u><h6>&#8853 What makes this tool different from other tools such as FlopZilla or Equilab?</u></h6></button>
+		<div class="content">
+		  <p>The content is essentially the same, but it gives you the added perk of being able to study theoretically optimal ranges as opposed to blindly guessing your opponent's range. This will guarantee that you begin to form a +EV strategy given you put in the effort.</p>
+		</div>
+
+		<div class = 'final'>
+		<h4>Have more questions? Email us at FlopEvaluate@gmail.com!</h4>
+		</div>
+
+      </div>
+  </body>
+</html>

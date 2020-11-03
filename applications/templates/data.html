@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en", style = 'background: #343a40' >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/assets/favico.png">
+
+    <title>Flop Evaluator - Results</title>
+
+    <script type="text/javascript">
+      var totalRange = JSON.parse('{{ranges | tojson}}');
+      var firstRange = totalRange[0];
+      var secondRange = totalRange[1];
+      var flopClass = '{{ flopClass }}'; 
+    </script>
+  
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type = 'module' src="{{url_for('static', filename='data.js')}}"></script>
+
+    <!-- Custom styles/javascript for this template -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='data.css') }}">
+  </head>
+
+  <div class= 'parent'>
+    <div id = 'nav'>
+      <button class = 'b_button', id = 'range' style="cursor: pointer">&#8592 Back To Ranges</button>
+      <button class = 'b_button', id = 'reselect' style="cursor: pointer">&#8592 Re-Select Flop</button>
+    </div>
+
+    <div id='c-container container', style = 'background: #e9ecef;'> 
+      <div class="row b-short",  style = 'background: #e9ecef;'>
+        <div class = 'b-p'> 
+            <h2 id='pos_name'></h2>
+        </div>
+        <div class='b-flop' id='flop-0'>
+        </div>
+        <div class='b-flop' id='flop-1'>
+        </div>
+        <div class='b-flop' id='flop-2'>
+        </div>
+      </div>
+      <div class="row b-tall" id='deck',  style = 'background: white'>
+        <div class = "flex-container">
+        <div class='b-box' id='pos1'>
+            <p><h2><u id = 'first_pos'></u></h2></p>
+        </div>
+        <div class='b-box' id = 'msg'>
+            <p><u><h2>BREAKDOWN</h2></u></p>
+              
+        </div>
+        <div class='b-box' id = 'pos2'>
+            <p><h2><u id = 'second_pos'></u></h2></p>
+        </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</html>

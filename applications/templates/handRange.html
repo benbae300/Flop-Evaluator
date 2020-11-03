@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en", style = 'background: #343a40' >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/assets/favico.png">
+
+    <title>Flop Evaluator - Ranges</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- script src="./main.js"></script -->
+    <script type = 'module' src="{{url_for('static', filename='handRange.js')}}"></script>
+    <!-- Custom styles/javascript for this template -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='handRange.css') }}">
+  </head>
+
+  <div class = 'parent'> 
+    <div id = 'nav'>
+      <button class = 'back', id = 'range' style="cursor: pointer">&#8592 Back To Ranges</button>
+    </div>
+    <div id='c-container container' , style = 'background: #e9ecef;'> 
+      <div class="row flop",  style = 'background: #D3D3D3;'>
+        <div class = 'b-p'> 
+            <h2 id='which_flop'></h2>
+        </div>
+        <div class='b-flop' id='flop-0'></div>
+        <div class='b-flop' id='flop-1'></div>
+        <div class='b-flop' id='flop-2'></div>
+        
+      </div>
+
+      <div class="row hand",  style = 'background: #e9ecef;'>
+        <div class = 'h-p'> 
+            <h4>Select our hand:</h4>
+            <div class="dropdown b-drop">
+              <button class="btn btn-secondary dropdown-toggle" id = "pos-but" type="button" data-toggle="dropdown"> Our Position
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu b-menu">
+                <li><button class = 'drop-bu', id = 'drop0'> </button></li>
+                <li><button class = 'drop-bu', id = 'drop1'> </button></li>
+              </ul>
+            </div>
+        </div>
+        <div class='b-hand' id='hand-0'></div>
+        <div class='b-hand' id='hand-1'></div>
+        <div class="submit-button" id='b-btn'>
+          <button class = "btn btn-secondary", id = 'myButton', style="cursor: pointer"><b>Calculate &#8595; </b></button>
+          <div id = 'equity'>
+            <h4 class = 'inline'>Equity:</h4>
+            <h4 class = 'inline', id = 'findEquity'>N/A</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="row b-tall" id='deck',  style = 'background: white'>
+        <div class='b-deck' id='S'></div>
+        <div class='b-deck' id='C'></div>
+        <div class='b-deck' id='D'></div>
+        <div class='b-deck' id='H'></div>
+      </div> 
+    </div>
+  </div>
+  </body>
+</html>

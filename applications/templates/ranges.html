@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en", style = 'background: #343a40' >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/assets/favico.png">
+
+    <title>Flop Evaluator - Ranges</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Custom styles/javascript for this template -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='ranges.css') }}">
+  </head>
+
+  <body class='w-100 h-100' id='c-body'>
+    <div id = 'nav'>
+      <a class = 'b_button'  href="home" style="cursor: pointer">&#8592 Home</a>
+    </div>
+    <div class="jumbotron", id = 'b-jumbo'>
+        <div class="container">
+          <h1 class="display-3">Range Breakdown: How To Start</h1>
+          <p>First pick which two positions you want to analyze. Next, create the 
+              flop that you want to evaluate! We will use our Monker-solved ranges to generate 
+              the EV of each player's range, along with breaking down the specific components 
+              that make up those portions. The results are now up to you to study as you please; hope you find them useful!
+            </p>
+            <p>
+              For terminology reference: SRP = single raised pot, 3BP = 3bet pot,  and 4bp = 4bet pot.  The first position 
+              displayed is the aggressor and the second is the caller (e.g. 3BP SB vs CO is a 3bet pot where SB has 3bet and CO has called).
+              Check out our FAQ if you have questions about the range breakdown terminology! (I.e. " Top Pair+ " only refers to one pair hands only)
+          </p>
+          <h4> Let's Crush!</h4>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4" id = "blank">
+          </div>
+          <div class="col-md-4" id = 'blank'>
+            <h1><u>Single Raised Pots:</u></h1>
+          </div>
+          <div class="col-md-4" id = "blank">
+          </div>
+          <div class="col-md-4">
+            <h3>SRP: UTG vs BB</h3>
+            <p><a class="btn btn-secondary" href="findFlop?SRP?UTG?BB" role="button" style="cursor: pointer">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>SRP: HJ vs BB</h3>
+            <p><a class="btn btn-secondary" href="findFlop?SRP?HJ?BB" role="button">Evalulate&raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>SRP: CO vs BB</h3>
+            <p><a class="btn btn-secondary" href="findFlop?SRP?CO?BB" role="button">Evalulate&raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>SRP: BU vs BB</h3>
+            <p><a class="btn btn-secondary" href="findFlop?SRP?BU?BB" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>SRP: SB vs BB</h3>
+            <p><a class="btn btn-secondary" href="findFlop?SRP?SB?BB" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>SRP: UTG vs BU</h3>
+            <p><a class="btn btn-secondary" href="findFlop?SRP?UTG?BU" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4" id = "blank">
+          </div>
+          <div class="col-md-4" id = "blank">
+            <h1><u>3 Bet Pots:</u></h1>
+          </div>
+          <div class="col-md-4" id = "blank">
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: BU vs CO</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?BU?CO" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: BU vs UTG/HJ</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?BU?UTG/HJ" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: HJ vs UTG</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?HJ?UTG" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: CO vs UTG/HJ</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?CO?UTG/HJ" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: BB vs UTG/HJ</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?BB?UTG/HJ" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: BB vs CO</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?BB?CO" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: BB vs BU</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?BB?BU" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: SB vs UTG/HJ</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?SB?UTG/HJ" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: SB vs CO</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?SB?CO" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: SB vs BU</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?SB?BU" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>3BP: BB vs SB</h3>
+            <p><a class="btn btn-secondary" href="findFlop?3BP?BB?SB" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4" id = "blank">
+          </div>
+          <div class="col-md-4" id = "blank">
+          </div>
+          <div class="col-md-4" id = "blank">
+            <h1><u>4 Bet Pots:</u></h1>
+          </div>
+          <div class="col-md-4" id = "blank">
+          </div>
+          <div class="col-md-4">
+            <h3>4BP: CO vs BU</h3>
+            <p><a class="btn btn-secondary" href="findFlop?4BP?CO?BU" role="button">Evalulate &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>4BP: UTG vs BU</h3>
+            <p><a class="btn btn-secondary" href="findFlop?4BP?UTG?BU" role="button">Evalulate&raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>4BP: UTG/HJ vs CO</h3>
+            <p><a class="btn btn-secondary" href="findFlop?4BP?UTG?CO" role="button">Evalulate&raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>4BP: SB vs BB</h3>
+            <p><a class="btn btn-secondary" href="findFlop?4BP?SB?BB" role="button">Evalulate&raquo;</a></p>
+          </div>
+        </div>
+  </body>
+</html>

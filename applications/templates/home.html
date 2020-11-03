@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en", style = 'background: #343a40' >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/assets/favico.png">
+
+    <title>Flop Evaluator - Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Custom styles/javascript for this template -->
+     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='home.css') }}">
+  </head>
+
+  <body class='w-100 h-100' id='c-body'>
+    <div id = 'nav'>
+      <a class = 'b_button'  href="logout" style="cursor: pointer">&#8592 Log Out</a>
+    </div>
+    <div class="jumbotron", id = 'b-jumbo'>
+        <div class="container">
+          <h1 class="display-3">Welcome, {{ name }}!</h1>
+          <p>We hope Flop Evaluator will be a valuable tool on your journey in helping understand fundamental poker theory! 
+            We offer two different ways to study the flop. The first tool returns the breakdown of GTO-derived ranges of both players from almost any conceivable position on a given flop. 
+             The second allows you to compare the equity of one specific hand versus a selected range on a given flop. 
+             If you have any further questions, feel free to check out our FAQ in the link below: 
+            </p>
+
+         <p><a class="btn btn-primary btn-lg" href="faq" role="button">Visit FAQ &raquo;</a></p>
+        </div>
+      </div>
+
+      <div class="container", id = 'b-container'>
+        <!-- Example row of columns -->
+        <div class="row", id = 'b-row'>
+          <div class="col-md-4">
+            <h2>Range Breakdown</h2>
+            <p>Dive right in and observe the breakdown of two optimal ranges! This tool, when studied effectively, will allow you to instantly identify both your and your opponents' range, nut, strong pair, and strong draw advantages on any flop texture. The user will be able to select two ranges for any situation (e.g. button vs cutoff in a 3 bet pot) and input a flop to quickly break down both ranges, revealing which player has the advantage in what strength of hands. </p>
+            <p><a class="btn btn-secondary" href="ranges" role="button">Let's Start &raquo;</a></p>
+          </div>
+         <div class="col-md-4">
+            <h2>Hand VS Range</h2>
+            <p> Ever feel lost on exactly how to proceed when your opponent is betting his entire range for a small size on the flop? The 1/3 range c-bet strategy on specific board textures is a highly effective GTO simplification and is beginning to be employed more and more frequently even by lower stakes players. This tool is primarily built to develop a counter to said strategy by taking a look at which hands mathematically contain enough equity to continue vs a range c-bet.</p>
+            <p><a class="btn btn-secondary" href="allRangesHands" role="button">Let's Start &raquo;</a></p>
+          </div>
+        </div>
+  </body>
+</html>
