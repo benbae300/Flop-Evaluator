@@ -41,5 +41,5 @@ python-dateutil==2.7.3
 python-dotenv==0.13.0
 SQLAlchemy==1.2.11
 pyzmq==23.0.0
-Werkzeug==2.3.5
+Werkzeug==2.0.0
 WTForms==2.3.1
