@@ -11,7 +11,7 @@ db = SQLAlchemy()
 login_manager = LoginManager()
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = environ.get('DATABASE_URL')
+app.config["SQLALCHEMY_DATABASE_URI"] = environ.get('DATABASE_URL').replace("://", "ql://", 1)
 app.config["SECRET_KEY"] = environ.get('SECRET_KEY')
 
 db.init_app(app)
