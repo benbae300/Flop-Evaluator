@@ -40,7 +40,6 @@ pytest-openfiles==0.3.0
 pytest-remotedata==0.3.0
 python-dateutil==2.7.3
 python-dotenv==0.13.0
-pyzmq==17.1.2
 SQLAlchemy==1.2.11
 Werkzeug==0.14.1
 WTForms==2.3.1
