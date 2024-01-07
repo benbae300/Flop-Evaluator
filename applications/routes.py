@@ -119,7 +119,7 @@ def cleanURL(url):
 def getData():
     print(request.url)
     u = request.url.split('?')
-    url = u[1].split('%3F')
+    url = u[1:]#u[1].split('%3F')
     action, r1, r2 = url[0], url[1], url[2]
     r1 = cleanURL(r1)
     r2 = cleanURL(r2)
